@@ -1,8 +1,30 @@
 # CP3402 Assignment 2 - Team 4
-## Team 
+## Team
 - Harmon Singh
 - Tariq Tarbuck
 - Danny Connolly
 - Joshua Gray
 
-TODO: README
+## Getting Started
+
+
+## Features
+
+
+## Multi-Lingual
+
+
+## Page Templates
+
+
+## Theme Options Panel
+
+
+## Sidebars
+
+
+## Contribute
+
+
+## TODO
+ - README
