@@ -8,3 +8,5 @@ uploads/
 mu-plugins/
 wp-cache-config.php
 plugins/hello.php
+*.sql.gz
+gulpfile.js
