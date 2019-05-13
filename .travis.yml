@@ -45,7 +45,7 @@ matrix:
 
 notifications:
 
-   on_success: never
+   on_success: always
 
    on_failure: always
 
@@ -87,8 +87,8 @@ matrix:
    - php: hhvm
 
 # Define an environment variable
-env:
- - SYMFONY_VERSION="3.0.*" DB=mysql
+#env:
+# - SYMFONY_VERSION="3.0.*" DB=mysql
 
 # Update composer
 before-install:
