@@ -28,9 +28,9 @@ sudo: false
  # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
 env:
-    # Current version in development is 5.0.
+    # Current version in development is 5.2.
     # @link https://github.com/WordPress/WordPress
-    - WP_VERSION=5.0 WP_MULTISITE=0
+    - WP_VERSION=5.2 WP_MULTISITE=0
 
  # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
