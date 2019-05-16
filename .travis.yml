@@ -31,4 +31,4 @@ matrix:
 before_script:
   - composer install --dev
 script:
-  - vendor/bin/phpcs -p src/ --standard=PHPCompatibility --runtime-set testVersion $TEST_VERSION
+  - vendor/bin/phpcs -p themes/coffee-can/assets/ --standard=PHPCompatibility --runtime-set testVersion $TEST_VERSION
