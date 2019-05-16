@@ -1,0 +1,21 @@
+{
+    "name": "harmonsingh/coffeecan",
+    "description": "Coffee Can is a WordPress theme made for the Coffee Can Store in Cairns, Australia",
+    "type": "wordpress-theme",
+    "minimum-stability" : "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Harmon Singh",
+            "email": "harmon.singh@my.jcu.edu.au"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "wimg/php-compatibility": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
+    }
+}
