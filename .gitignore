@@ -6,7 +6,9 @@ cache/
 upgrade/
 uploads/
 mu-plugins/
+plugins/
 wp-cache-config.php
 plugins/hello.php
 *.sql.gz
 gulpfile.js
+node_modules/
