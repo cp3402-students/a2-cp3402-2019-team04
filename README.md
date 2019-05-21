@@ -1,10 +1,9 @@
 # CP3402 Assignment 2 - Team 4
 [![Build Status](https://travis-ci.org/cp3402-students/a2-cp3402-2019-team04.svg?branch=master)](https://travis-ci.org/cp3402-students/a2-cp3402-2019-team04)
 ## Team
+- Joshua Gray
 - Harmon Singh
 - Tariq Tarbuck
-- Danny Connolly
-- Joshua Gray
 
 ## Getting Started
 It is quite simple to get started with this project. With a well crafted server workflow, the only thing you need to worry about is getting your local server just the way you want it.
@@ -28,13 +27,13 @@ For the creation of your local development environment, here are some basic guid
 2. **Setup your WordPress database -** In order to set up your WordPress database for this project, execute the following commands
     - `vagrant ssh` to ssh into your vagrant box.
     - `mysql -uroot -proot` to enter the MySQL command line.
-    - `CREATE DATABASE coffee-can;` to create the database on your system
+    - `CREATE DATABASE coffee_can;` to create the database on your system
     - `quit` to exit out of the MySQL interface.
 
 
 
 3. **Install WordPress -** Now that you have the virtual machine running, you can install WordPress on your new local webserver. Execute the following to create the WordPress installation directory on your system
-    - `vagrant ssh` to ssh into your running virtual environment.
+    - `vagrant ssh` to ssh into your running virtual environment (If you haven't done this already).
     - `cd /var/www/public/` to change your working directory to the root directory of the apache webserver.
     - `wget https://wordpress.org/latest.tar.gz` downloads the latest version of WordPress
     - `tar -xzvf latest.tar.gz` extracts the file into the ./wordpress/ directory  
@@ -60,21 +59,13 @@ Provided you have used git before (if not, check out [this guide](https://guides
 To get started, change your current branch to the development directory using `git checkout --track origin/Development`. We have found you may first need to also execute `git fetch origin`. Once you are tracking the Development repository, you can now create or checkout the feature branch for your current task. The id for your feature branch can be obtained through the [trello](https://trello.com/b/J7tXOscO/cp3402-assignment-two) board. With this you can then execute `git checkout Feature/feature_id` and `git push -u origin/Feature/feature_id` and begin your development. Once you have completed the feature, make sure your travis ci build is successful and then create a pull request from the feature branch into development. An administrator will then handle merge conflicts and travis build errors and integrate your feature branch into the working Development environment.
 
 ## Features
+
+
+### Theme Specifications
+
+
 ### Unit Testing With Travis-CI
-
-The Coffee Can theme is completely ready to be deployed to and tested by Travis-CI for WordPress Coding Standards and best practices. All you need to do to activate the test is sign up and follow the instructions to point Travis-CI towards your repo. Just don't forget to update the status badge to point to your repositories unit test.
-[Travis-CI](https://travis-ci.org/)
-
-## Multi-Lingual
-
-
-## Page Templates
-
-
-## Theme Options Panel
-
-
-
+This repository uses [Travis-CI](https://travis-ci.org/) to automate build checks of our codebase. Our setup aligns our design with the WordPress coding standards and best practices. When a stable release is pushed to production, the master branch of this repository will be a functioning archive of the latest stable version. This will be the direct point of reverts when issues are found in downstream branches. Please ensure when developing in this repository that commits and especially pull requests you make pass the build test by Travis. This simplifies the process for the repository administrator in implementing your features.
 
 
 ## Contributing
@@ -92,8 +83,3 @@ Pull requests are highly appreciated. Please follow these guidelines:
 2. Make sure that your code is bug-free and does not introduce new bugs
 3. Create a [pull request](https://help.github.com/articles/creating-a-pull-request)
 4. Verify that all the Travis-CI build checks have passed
-
-
-## TODO
- - README
- -git-deploy test
