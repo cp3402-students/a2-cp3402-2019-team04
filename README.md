@@ -1,5 +1,8 @@
 # CP3402 Assignment 2 - Team 4
 [![Build Status](https://travis-ci.org/cp3402-students/a2-cp3402-2019-team04.svg?branch=master)](https://travis-ci.org/cp3402-students/a2-cp3402-2019-team04)
+[![Trello](https://img.shields.io/badge/Slack-Team04-blue.svg)](https://trello.com/b/J7tXOscO/cp3402-assignment-two)
+[![Slack](https://img.shields.io/badge/Trello-Team04-blue.svg)](https://itatjcu.slack.com/messages/GHKJTEQJK)
+
 ## Team
 - Joshua Gray
 - Harmon Singh
