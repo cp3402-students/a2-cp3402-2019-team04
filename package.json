@@ -10,5 +10,11 @@
     "gulp-sourcemaps": "^1.5.2",
     "jshint": "^2.10.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "browser-sync": "^2.26.5",
+    "gulp-image": "^4.4.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-postcss": "^8.0.0"
+  }
 }

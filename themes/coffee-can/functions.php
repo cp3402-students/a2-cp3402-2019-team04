@@ -84,6 +84,65 @@ endif;
 add_action( 'after_setup_theme', 'coffee_can_setup' );
 
 /**
+ * Register custom fonts.
+ */
+function coffee_can_fonts_url() {
+	$fonts_url = '';
+
+	/*
+	 * Translators: If there are characters in your language that are not
+	 * supported by Source Sans Pro and PT Serif, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'coffee-can' );
+	$pt_serif = _x( 'on', 'PT Serif font: on or off', 'coffee-can' );
+
+	$font_families = array();
+
+	if ( 'off' !== $source_sans_pro) {
+		$font_families[] = 'Source Sans Pro:400,400i,700,900';
+	}
+
+	if ( 'off' !== $pt_serif ) {
+		$font_families[] = 'PT Serif:400,400i,700,700i';
+	}
+
+	if ( in_array('on', array($source_sans_pro, $pt_serif) ) ) {
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+
+
+/**
+ * Add preconnect for Google Fonts.
+ *
+ * @since Twenty Seventeen 1.0
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
+function coffee_can_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'coffee-can-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'coffee_can_resource_hints', 10, 2 );
+
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -120,6 +179,9 @@ add_action( 'widgets_init', 'coffee_can_widgets_init' );
  * Enqueue scripts and styles.
  */
 function coffee_can_scripts() {
+	// Enquue Google Fonts: Source Sans Pro and PT Serif
+	wp_enqueue_style('coffee-can-styles', coffee_can_fonts_url());
+
 	wp_enqueue_style( 'coffee-can-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'coffee-can-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -158,4 +220,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
