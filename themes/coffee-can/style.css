@@ -605,52 +605,6 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%; }
-  .main-navigation ul {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding-left: 0; }
-    .main-navigation ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999; }
-      .main-navigation ul ul ul {
-        left: -999em;
-        top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
-        left: 100%; }
-      .main-navigation ul ul a {
-        width: 200px; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      left: auto; }
-  .main-navigation li {
-    float: left;
-    position: relative; }
-  .main-navigation a {
-    display: block;
-    text-decoration: none; }
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
-
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: block; } }
-
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -830,6 +784,112 @@ a {
     flex: 1 0 auto; }
   .site-navigation {
     width: 55%; } }
+
+/*
+Header Menu
+*/
+.main-navigation {
+  display: block;
+  font-family: "Source Sans Pro", "Lucinda Grande", "Lucinda Sans Unicode", "Lucinda Sans", Geneva, Arial, sans-serif;
+  font-weight: 400;
+  clear: left;
+  /*
+	TODO
+	Apply Style to the current page you are on
+	*/ }
+  .main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-top: 1em;
+    padding-left: 0; }
+    .main-navigation ul ul {
+      display: none;
+      top: 1.5em;
+      z-index: 99999; }
+      .main-navigation ul ul ul {
+        top: 0; }
+      .main-navigation ul ul li {
+        padding-left: 1em; }
+        .main-navigation ul ul li:hover > ul,
+        .main-navigation ul ul li.focus > ul {
+          left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      left: auto; }
+  .main-navigation li {
+    position: relative; }
+  .main-navigation a {
+    display: inline-block;
+    width: 100%;
+    padding: .5em 1em .5em 0;
+    text-decoration: none;
+    color: #fff; }
+  .main-navigation a:hover,
+  .main-navigation a:focus {
+    text-decoration: underline; }
+  .main-navigation .menu-item-has-children,
+  .main-navigation .page-item-has-children {
+    min-width: 218px; }
+  .main-navigation .menu-item-has-children > a,
+  .main-navigation .page_item_has_children > a {
+    padding-right: 2em; }
+
+button.dropdown-toggle {
+  position: absolute;
+  right: 0;
+  border: none;
+  background: inherit;
+  color: white;
+  line-height: 1.5em;
+  padding: .4em 1em .4em .5em; }
+
+.menu-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  margin: 1.2em 1.2em 0 0;
+  padding: .6em .8em;
+  font-size: 80%;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3); }
+
+/* Toggle small menu and sub-menus on */
+.toggled-on ul,
+.sub-menu.toggled-on {
+  display: block; }
+
+@media screen and (min-width: 600px) {
+  .menu-toggle {
+    display: none; }
+  .main-navigation .menu-item-has-children > a,
+  .main-navigation .page_item_has_children > a {
+    padding-right: 2em;
+    background: rgba(255, 255, 255, 0.1); }
+  .main-navigation ul {
+    display: block;
+    display: flex;
+    flex-wrap: wrap; }
+    .main-navigation ul ul {
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.1);
+      margin-left: 0; }
+      .main-navigation ul ul li {
+        padding-left: 0; }
+        .main-navigation ul ul li a {
+          width: 218px;
+          background: none; }
+    .main-navigation ul li a {
+      padding: .4em 1em; } }
+
+@media screen and (min-width: 900px) {
+  .main-navigation ul {
+    justify-content: flex-end;
+    padding-top: 0; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
