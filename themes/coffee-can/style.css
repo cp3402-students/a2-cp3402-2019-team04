@@ -69,18 +69,9 @@ body {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-
- h1 {
-   display: block;
-   font-size: 3em;
-   margin-top: 0.67em;
-   margin-bottom: 0.67em;
-   margin-left: 0;
-   margin-right: 0;
-   font-weight: bold;
- 	text-align: left;
- }
-
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
 
 /* Grouping content
 	 ========================================================================== */
@@ -894,7 +885,8 @@ a {
 .social-menu {
   margin: 1em 0; }
   .social-menu p {
-    font-size: 1rem; }
+    font-size: 1rem;
+    text-align: center; }
   .social-menu ul {
     display: flex;
     justify-content: center;
