@@ -45,6 +45,7 @@ if ( ! function_exists( 'coffee_can_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'coffee-can' ),
+			'social' => esc_html__('Social Media Menu', 'coffee-can'),
 		) );
 
 		/*
@@ -187,9 +188,11 @@ function coffee_can_scripts() {
 
 	wp_enqueue_style( 'coffee-can-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'coffee-can-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'coffee-can-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'coffee-can-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'coffee-can-functions', get_template_directory_uri() . '/assets/js/functions.js', array('jquery'), '20161201', true );
+
+	wp_enqueue_script( 'coffee-can-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -216,6 +219,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load SVG icon functions.
+ */
+require get_template_directory() . '/inc/icon-functions.php';
 
 /**
  * Load Jetpack compatibility file.
