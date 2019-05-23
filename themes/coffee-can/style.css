@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: CoffeeCan
 Theme URI: http://underscores.me/
@@ -749,7 +750,7 @@ a {
 
 .post,
 .page {
-  margin: 0 0 1.5em; }
+  margin: 0 0 0em; }
 
 .updated:not(.published) {
   display: none; }
@@ -762,6 +763,56 @@ a {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+  position: relative;
+  padding: 1em;
+  font-family: "Source Sans Pro", "Lucinda Grande", "Lucinda Sans Unicode", "Lucinda Sans", Geneva, Arial, sans-serif;
+  color: #fff;
+  background-color: black;
+  text-align: center; }
+  .site-footer a {
+    font-weight: 700;
+    color: white;
+    text-decoration: none; }
+    .site-footer a:hover, .site-footer a:focus {
+      text-decoration: underline; }
+  @media screen and (min-width: 600px) {
+    .site-footer {
+      padding: 1em 2em; } }
+
+.site-info {
+  margin: 1em 0 1em auto;
+  align-self: center; }
+  @media screen and (min-width: 900px) {
+    .site-info {
+      text-align: right; }
+      .site-info span {
+        display: block; } }
+
+.social-menu {
+  margin: 1em 0; }
+  .social-menu p {
+    font-size: 1rem; }
+  .social-menu ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    .social-menu ul a {
+      display: block;
+      padding: .5em 1em;
+      color: white;
+      text-decoration: none;
+      opacity: .6; }
+      .social-menu ul a:hover, .social-menu ul a:focus {
+        text-decoration: underline;
+        opacity: 1; }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -861,3 +912,52 @@ object {
 
 .gallery-caption {
   display: block; }
+
+/*--------------------------------------------------------------
+## Icons
+--------------------------------------------------------------*/
+/* SVG Icons base styles */
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  position: relative;
+  /* Align more nicely with capital letters */
+  top: -0.0625em;
+  vertical-align: left;
+  width: 1em; }
+
+/*--------------------------------------------------------------
+SVG Fallbacks
+--------------------------------------------------------------*/
+.svg-fallback {
+  display: none; }
+
+.no-svg .svg-fallback {
+  display: inline-block; }
+
+.no-svg .nav-links .svg-fallback {
+  padding: 0 .5em;
+  color: inherit;
+  background: inherit; }
+
+.no-svg .svg-fallback.icon-arrow-long-left:before {
+  content: "←"; }
+
+.no-svg .svg-fallback.icon-arrow-long-right:before {
+  content: "→"; }
+
+/* Social Menu fallbacks */
+.no-svg .social-menu a {
+  height: auto;
+  width: auto; }
+
+.no-svg .social-menu li a .screen-reader-text {
+  clip: auto;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  height: auto;
+  position: relative !important;
+  /* overrides previous !important styles */
+  width: auto; }

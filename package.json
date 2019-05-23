@@ -1,8 +1,8 @@
 {
-  "name": "sass-assignment",
+  "name": "coffee-can",
   "version": "1.0.0",
-  "description": "Sass for Group 4 CP3402 - Assignmetn 2",
-  "author": "Harmon Singh",
+  "description": "Coffee-Can Theme CP3402 Assignment 2",
+  "author": "Joshua Gray, Tariq Tarbuck, Harmon Singh",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-jshint": "^1.9.0",
