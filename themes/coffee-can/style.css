@@ -766,6 +766,41 @@ a {
     .site-content {
       padding: 2em; } }
 
+.site-content {
+  max-width: 1080px;
+  margin: 0 auto; }
+
+/* Single posts */
+@media screen and (min-width: 900px) {
+  .single.has-sidebar .hentry,
+  .page .hentry {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .single.has-sidebar .hentry .entry-header,
+    .page .hentry .entry-header {
+      width: 100%;
+      flex: 1 0 100%; }
+    .single.has-sidebar .hentry .post-content,
+    .page .hentry .post-content {
+      width: 60%; }
+    .single.has-sidebar .hentry .widget-area,
+    .page .hentry .widget-area {
+      width: 30%; }
+  .page.has-page-sidebar .hentry {
+    flex-direction: row-reverse; }
+  .page:not(.has-page-sidebar) .hentry {
+    justify-content: flex-end; } }
+
+@media screen and (min-width: 900px) {
+  .single.no-sidebar .post-content__wrap {
+    display: flex;
+    justify-content: space-between; }
+    .single.no-sidebar .post-content__wrap .entry-meta {
+      width: 20%; }
+    .single.no-sidebar .post-content__wrap .post-content__body {
+      width: 70%; } }
+
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
