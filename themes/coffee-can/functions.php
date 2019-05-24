@@ -190,7 +190,7 @@ function coffee_can_scripts() {
 
 	wp_enqueue_script( 'coffee-can-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '20151215', true );
 
-	wp_localize_script( 'coffee-can-navigation', 'coffee-canScreenReaderText', array(
+	wp_localize_script( 'coffee-can-navigation', 'coffee_canScreenReaderText', array(
 		'expand' => __( 'Expand child menu', 'coffee-can'),
 		'collapse' => __( 'Collapse child menu', 'coffee-can'),
 	));
