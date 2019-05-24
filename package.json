@@ -1,13 +1,20 @@
 {
-  "name": "sass-practical",
+  "name": "coffee-can",
   "version": "1.0.0",
-  "description": "Sass Practical for CP3402",
-  "author": "Joshua Gray",
+  "description": "Coffee-Can Theme CP3402 Assignment 2",
+  "author": "Joshua Gray, Tariq Tarbuck, Harmon Singh",
   "devDependencies": {
-    "gulp": "^3.8.11",
-    "jshint":  "^2.10.2",
+    "gulp": "^3.9.1",
     "gulp-jshint": "^1.9.0",
-    "gulp-sass": "^1.0.5",
-    "gulp-sourcemaps": "^1.5.2"
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "jshint": "^2.10.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "browser-sync": "^2.26.5",
+    "gulp-image": "^4.4.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-postcss": "^8.0.0"
   }
 }

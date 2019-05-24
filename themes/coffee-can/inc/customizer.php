@@ -25,6 +25,24 @@ function coffee_can_customize_register( $wp_customize ) {
 			'render_callback' => 'coffee_can_customize_partial_blogdescription',
 		) );
 	}
+
+	$wp_customize->add_setting('footer_text', array(
+		'default' => 'Check out our Social Media',
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_section('coffee-can_footer', array(
+		'title' => __('Footer Settings', 'coffee-can'),
+		'priority' => 30,
+	));
+
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer_title', array(
+		'label'      => __( 'Footer Menu Heading', 'coffee-can' ),
+		'section'    => 'coffee-can_footer',
+		'settings'   => 'footer_text',
+	)));
+
 }
 add_action( 'customize_register', 'coffee_can_customize_register' );
 
