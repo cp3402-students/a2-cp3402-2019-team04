@@ -353,7 +353,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Source Sans Pro", "Lucinda Grande", "Lucinda Sans Unicode", "Lucinda Sans", Geneva, Arial, sans-serif;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.5; }
@@ -369,7 +369,8 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: "Source Sans Pro", "Lucinda Grande", "Lucinda Sans Unicode", "Lucinda Sans", Geneva, Arial, sans-serif; }
+  font-family: "Source Sans Pro", "Lucinda Grande", "Lucinda Sans Unicode", "Lucinda Sans", Geneva, Arial, sans-serif;
+  color: #4d1a00; }
 
 h1 {
   display: block;
@@ -771,7 +772,7 @@ a {
   font-family: "Source Sans Pro", "Lucinda Grande", "Lucinda Sans Unicode", "Lucinda Sans", Geneva, Arial, sans-serif;
   color: #fff;
   background-color: #631d76;
-  background-image: linear-gradient(#631d76, purple);
+  background-image: linear-gradient(#631d76, #782390);
   box-shadow: 0 8px 6px -6px grey; }
   @media screen and (min-width: 600px) {
     .site-header {
@@ -780,7 +781,7 @@ a {
 .site-branding {
   display: flex;
   min-height: 65px;
-  font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif; }
+  font-family: Verdana; }
 
 .custom-logo-link {
   margin-right: 1em; }
@@ -949,6 +950,9 @@ button.dropdown-toggle {
 .entry-summary {
   margin: 1.5em 0 0; }
 
+.wp-block-cover__inner-container p {
+  color: white; }
+
 .entry-title {
   display: none; }
 
@@ -964,8 +968,7 @@ button.dropdown-toggle {
     padding: 2rem;
     border-radius: 50%; }
   .profile li {
-    list-style-type: none;
-    display: inline; }
+    list-style-type: none; }
 
 /*--------------------------------------------------------------
 ## Footer

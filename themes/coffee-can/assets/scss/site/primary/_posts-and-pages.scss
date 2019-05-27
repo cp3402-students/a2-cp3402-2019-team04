@@ -17,6 +17,10 @@
 	margin: 1.5em 0 0;
 }
 
+.wp-block-cover__inner-container p {
+	color: white;
+}
+
 .entry-title {
 	display: none;
 }
@@ -39,6 +43,5 @@
 
 	li {
     list-style-type: none;
-    display: inline;
 	}
 }
