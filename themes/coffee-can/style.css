@@ -770,14 +770,17 @@ a {
   padding: 1em;
   font-family: "Source Sans Pro", "Lucinda Grande", "Lucinda Sans Unicode", "Lucinda Sans", Geneva, Arial, sans-serif;
   color: #fff;
-  background-color: #631d76; }
+  background-color: #631d76;
+  background-image: linear-gradient(#631d76, purple);
+  box-shadow: 0 8px 6px -6px grey; }
   @media screen and (min-width: 600px) {
     .site-header {
       padding: 1em 2em; } }
 
 .site-branding {
   display: flex;
-  min-height: 65px; }
+  min-height: 65px;
+  font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif; }
 
 .custom-logo-link {
   margin-right: 1em; }
@@ -864,7 +867,9 @@ Header Menu
     color: #fff; }
   .main-navigation a:hover,
   .main-navigation a:focus {
-    text-decoration: underline; }
+    text-decoration: overline;
+    color: lightgrey;
+    background-color: purple; }
   .main-navigation .menu-item-has-children,
   .main-navigation .page-item-has-children {
     min-width: 218px; }
@@ -944,9 +949,23 @@ button.dropdown-toggle {
 .entry-summary {
   margin: 1.5em 0 0; }
 
+.entry-title {
+  display: none; }
+
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+.profile {
+  margin: 1rem;
+  background-color: lightgoldenrodyellow;
+  border-radius: 5%; }
+  .profile img {
+    padding: 2rem;
+    border-radius: 50%; }
+  .profile li {
+    list-style-type: none;
+    display: inline; }
 
 /*--------------------------------------------------------------
 ## Footer
