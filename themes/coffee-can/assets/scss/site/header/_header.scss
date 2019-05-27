@@ -13,6 +13,9 @@
 	font-family: $font__sans;
 	color: #fff;
 	background-color: #631d76;
+	background-image: linear-gradient(#631d76, #782390);
+	box-shadow: 0 8px 6px -6px grey;
+
 
 	@media screen and (min-width: $query__small) {
 		padding: 1em 2em;
@@ -22,6 +25,7 @@
 .site-branding {
 	display: flex;
 	min-height: 65px;
+	font-family: Verdana;
 }
 
 .custom-logo-link {

@@ -32,6 +32,7 @@
 
 			a {
 				width: 200px;
+
 			}
 		}
 
@@ -55,7 +56,9 @@
 
 	a:hover,
 	a:focus {
-		text-decoration: underline;
+		text-decoration: overline;
+		color: lightgrey;
+		background-color: purple;
 	}
 	/*
 	TODO
