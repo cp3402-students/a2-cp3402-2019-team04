@@ -14,19 +14,35 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+		<?php
+
+		if (has_nav_menu('social')) { ?>
+
+			<nav class="social-menu">
+				<p> <?php echo get_theme_mod('footer_text', 'Check out our Social Media') ?></p>
+				<?php
+						wp_nav_menu( array(
+							'theme_location' => 'social',
+							'menu_class'     => 'social-links-menu',
+							'depth'          => 1,
+							'link_before'    => '<span class="screen-reader-text">',
+							'link_after'     => '</span>' . coffee_can_get_svg( array( 'icon' => 'chain' ) ),
+						) );
+					?>
+			</nav><!-- social-menu -->
+
+	<?php } ?>
+
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'coffee-can' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'coffee-can' ), 'WordPress' );
-				?>
+				<?php echo get_option( 'blogname' ); ?>
 			</a>
-			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'coffee-can' ), 'coffee-can', '<a href="http://underscores.me/">Joshua Gray, Harmon Singh, Tariq Tarbuck, Danny Connolly</a>' );
+				printf( 'Team 04 2019' );
 				?>
 		</div><!-- .site-info -->
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

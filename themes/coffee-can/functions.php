@@ -44,7 +44,8 @@ if ( ! function_exists( 'coffee_can_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'coffee-can' ),
+			'header' => esc_html__( 'Header Menu', 'coffee-can' ),
+			'social' => esc_html__('Social Media Menu', 'coffee-can'),
 		) );
 
 		/*
@@ -66,7 +67,11 @@ if ( ! function_exists( 'coffee_can_setup' ) ) :
 		) ) );
 
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support( 'customize-logo', array(
+			'width' => 90,
+			'height' => 90,
+			'flex-width' => true,
+		));
 
 		/**
 		 * Add support for core custom logo.
@@ -74,14 +79,72 @@ if ( ! function_exists( 'coffee_can_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 90,
+			'width'       => 90,
 			'flex-width'  => true,
-			'flex-height' => true,
 		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'coffee_can_setup' );
+
+/**
+ * Register custom fonts.
+ */
+function coffee_can_fonts_url() {
+	$fonts_url = '';
+
+	/*
+	 * Translators: If there are characters in your language that are not
+	 * supported by Source Sans Pro and PT Serif, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'coffee-can' );
+	$pt_serif = _x( 'on', 'PT Serif font: on or off', 'coffee-can' );
+
+	$font_families = array();
+
+	if ( 'off' !== $source_sans_pro) {
+		$font_families[] = 'Source Sans Pro:400,400i,700,900';
+	}
+
+	if ( 'off' !== $pt_serif ) {
+		$font_families[] = 'PT Serif:400,400i,700,700i';
+	}
+
+	if ( in_array('on', array($source_sans_pro, $pt_serif) ) ) {
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+
+
+/**
+ * Add preconnect for Google Fonts.
+ *
+ * @since Twenty Seventeen 1.0
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
+function coffee_can_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'coffee-can-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'coffee_can_resource_hints', 10, 2 );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -120,11 +183,21 @@ add_action( 'widgets_init', 'coffee_can_widgets_init' );
  * Enqueue scripts and styles.
  */
 function coffee_can_scripts() {
+	// Enquue Google Fonts: Source Sans Pro and PT Serif
+	wp_enqueue_style('coffee-can-styles', coffee_can_fonts_url());
+
 	wp_enqueue_style( 'coffee-can-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'coffee-can-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'coffee-can-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '20151215', true );
 
-	wp_enqueue_script( 'coffee-can-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_localize_script( 'coffee-can-navigation', 'coffee_canScreenReaderText', array(
+		'expand' => __( 'Expand child menu', 'coffee-can'),
+		'collapse' => __( 'Collapse child menu', 'coffee-can'),
+	));
+
+	wp_enqueue_script( 'coffee-can-functions', get_template_directory_uri() . '/assets/js/functions.js', array('jquery'), '20161201', true );
+
+	wp_enqueue_script( 'coffee-can-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -153,9 +226,13 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Load SVG icon functions.
+ */
+require get_template_directory() . '/inc/icon-functions.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
