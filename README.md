@@ -65,7 +65,9 @@ To get started, change your current branch to the development directory using `g
 
 
 ### Theme Specifications
+The theme created for this project utilises the starter theme [Underscores](http://underscores.me/) by Automattic. Therefore, you should check out the underscores documentation to find out about the structure of the theme. We suggest having a look at the Building Wordpress Themes from Scratch using Underscores Course by Morten Rand-Hendriksen on [Lynda.com](lynda.com) as the overall site design takes great inspiration from this course.
 
+When developing the theme, make sure that you are maintaining flexibility and customisation options for the end user. The site colours are mostly defined in the the variables folder in sass and should be the first point of reference for site design choices. Make an effort to design code to Wordpress coding standards (Travis will detect any errors you make). 
 
 ### Unit Testing With Travis-CI
 This repository uses [Travis-CI](https://travis-ci.org/) to automate build checks of our codebase. Our setup aligns our design with the WordPress coding standards and best practices. When a stable release is pushed to production, the master branch of this repository will be a functioning archive of the latest stable version. This will be the direct point of reverts when issues are found in downstream branches. Please ensure when developing in this repository that commits and especially pull requests you make pass the build test by Travis. This simplifies the process for the repository administrator in implementing your features.
