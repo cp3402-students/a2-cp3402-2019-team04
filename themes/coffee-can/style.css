@@ -469,7 +469,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: beige;
+  background: #fdfdf7;
   /* Fallback for when there is no custom background color defined. */ }
 
 hr {
